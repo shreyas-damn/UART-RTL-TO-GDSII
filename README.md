@@ -120,7 +120,6 @@ Each RTL module includes an individual testbench.
 To simulate:
 
 ```bash
-cd scripts
 ./scripts/tx.sh
 ```
 
