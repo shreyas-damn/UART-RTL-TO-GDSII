@@ -1,0 +1,33 @@
+#   Read RTL code 
+read_verilog -sv rtl/baud_gen.sv
+read_verilog -sv rtl/tx.sv
+read_verilog -sv rtl/rx.sv
+read_verilog -sv rtl/uart.sv
+
+#   set the top module
+hierarchy -top uart
+
+#   converts always blocks to hardware netlist
+proc
+
+#   optimizes logic
+opt
+
+#   map generic cells (AND, NAND, etc)
+techmap
+
+#   map flipflops to sky130 cells
+dfflibmap -liberty sky130/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+#   map the generic cells to sky130 cells
+abc -liberty sky130/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+#   map physical area information of sky130 to yosys stats
+stat -liberty sky130/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+#   generate reports
+tee -o synthesis/reports/uart_stat.rpt stat -liberty sky130/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+#   generate gate level netlist
+write_verilog synthesis/outputs/uart_synth.v
+
