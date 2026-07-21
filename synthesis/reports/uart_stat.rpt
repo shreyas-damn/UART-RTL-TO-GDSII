@@ -51,8 +51,8 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      594        - wires
-     5347        - wire bits
+      569        - wires
+     5212        - wire bits
        11        - public wires
        32        - public wire bits
         6        - ports
@@ -92,8 +92,8 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      437        - wires
-     4868        - wire bits
+      399        - wires
+     4761        - wire bits
        11        - public wires
        28        - public wire bits
         8        - ports
@@ -173,8 +173,8 @@
         +----------Count including submodules.
         |        +-Area including submodules.
         |        | 
-     1464        - wires
-    15193        - wire bits
+     1401        - wires
+    14951        - wire bits
        41        - public wires
       105        - public wire bits
        28        - ports
